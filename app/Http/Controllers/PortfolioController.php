@@ -18,7 +18,7 @@ class PortfolioController extends Controller
             'title' => 'Web Developer',
             'taglines' => ['Web Developer'],
             'bio' => 'Saya adalah seorang mahasiswa Universitas Negeri Yogyakarta program studi S1-Teknolog Informasi. Fokus saya adalah pengembangan website terutama pada bagian Frontend Developmentnya.',
-            'email' => 'rigelammarusshidqi42@gmail.com', // Gantilah dengan email Anda
+            'email' => 'career.rigel@gmail.com', // Gantilah dengan email Anda
             'phone' => '+62 853-2944-9504',     // Gantilah dengan nomor Anda
             'location' => 'Indonesia',
             'github' => 'https://github.com/Gellsxly',     // Gantilah dengan profil GitHub Anda
@@ -27,23 +27,11 @@ class PortfolioController extends Controller
         ];
 
         $skills = [
-            'Frontend' => [
-                ['name' => 'HTML5 / CSS3', 'level' => 90],
-                ['name' => 'JavaScript (ES6+)', 'level' => 85],
-                ['name' => 'Responsive Design', 'level' => 90],
-                ['name' => 'Tailwind CSS', 'level' => 80],
-            ],
-            'Backend' => [
-                ['name' => 'PHP', 'level' => 85],
-                ['name' => 'Laravel Framework', 'level' => 80],
-                ['name' => 'MySQL / Database', 'level' => 75],
-                ['name' => 'API Integration', 'level' => 70],
-            ],
-            'Tools & Others' => [
-                ['name' => 'Git / GitHub', 'level' => 80],
-                ['name' => 'Figma (UI/UX)', 'level' => 85],
-                ['name' => 'VS Code', 'level' => 90],
-            ],
+            ['name' => 'Laravel Framework', 'icon' => 'fa-brands fa-laravel',       'color' => '#FF2D20'],
+            ['name' => 'HTML',              'icon' => 'fa-brands fa-html5',          'color' => '#E44D26'],
+            ['name' => 'GitHub',            'icon' => 'fa-brands fa-github',         'color' => '#1b1f2e'],
+            ['name' => 'Figma',             'icon' => 'fa-brands fa-figma',          'color' => '#A259FF'],
+            ['name' => 'VS Code',           'icon' => 'fa-solid fa-code',            'color' => '#007ACC'],
         ];
 
         $experiences = [
@@ -86,47 +74,38 @@ class PortfolioController extends Controller
             [
                 'degree' => 'S1 Teknologi Informasi',
                 'institution' => 'Universitas Negeri Yogyakarta',
-                'period' => '2023 - 2027',
-                'gpa' => '3.77 / 4.00'
+                'period' => '2023 - 2027 (Perkiraan)',
+                'gpa' => '3.77 (Smt 6)'
             ]
         ];
 
         $projects = [
             [
-                'title' => 'E-Commerce Dashboard',
+                'title' => 'Website PortofolioKU',
                 'category' => 'web',
-                'description' => 'Dasbor administrasi lengkap dengan manajemen inventaris, statistik penjualan interaktif, dan kontrol pesanan konsumen.',
-                'image' => 'project_dashboard.jpg',
+                'description' => 'Website Portofolio Pribadi',
+                'image' => 'MyPorto.jpeg',
                 'tools' => ['Laravel', 'MySQL', 'ChartJS', 'Bootstrap'],
                 'demo' => '#',
-                'github' => '#'
+                'github' => 'https://github.com/Gellsxly/MyPorto'
             ],
             [
-                'title' => 'Mobile Mental Health UI/UX Design',
+                'title' => 'Website Padukuhan Ngemplak Kalangan',
                 'category' => 'design',
-                'description' => 'Desain prototipe aplikasi seluler kesehatan mental dengan fokus pada warna yang menenangkan dan alur navigasi yang intuitif.',
-                'image' => 'project_design.jpg',
+                'description' => 'Mendesain dan mengerjakan project pada bagian frontend untuk website padukuhan ngemplak kalangan',
+                'image' => 'padukuhan.jpeg',
                 'tools' => ['Figma', 'UI/UX Design', 'Wireframing'],
                 'demo' => '#',
-                'github' => '#'
+                'github' => 'https://github.com/Snku1/ngemplak-kalangan-web'
             ],
             [
-                'title' => 'Portfolio Website v1',
-                'category' => 'web',
-                'description' => 'Website portofolio interaktif dengan animasi kustom, light/dark mode, dan glassmorphism minimalis.',
-                'image' => 'project_portfolio.jpg',
-                'tools' => ['HTML5', 'Vanilla CSS', 'JavaScript', 'AOS'],
+                'title' => 'Sistem Penulisan Hibah Buku (Book Grant System)',
+                'category' => 'Web',
+                'description' => 'Team base project kuliah pengembangan sistem penulisan hibah buku divisi Frontend Development',
+                'image' => 'Hibah Buku.jpeg',
+                'tools' => ['Figma', 'UI/UX Design', 'Wireframing'],
                 'demo' => '#',
-                'github' => '#'
-            ],
-            [
-                'title' => 'E-Learning Platform API',
-                'category' => 'backend',
-                'description' => 'Restful API untuk platform pembelajaran daring yang mendukung otentikasi JWT, manajemen kelas, tugas, dan kuis.',
-                'image' => 'project_api.jpg',
-                'tools' => ['Laravel', 'PostgreSQL', 'Sanctum', 'Swagger'],
-                'demo' => '#',
-                'github' => '#'
+                'github' => 'https://github.com/RizalHaryaputra/book-grant-frontend'
             ],
         ];
 

@@ -31,7 +31,10 @@
     <header class="site-header" id="main-header">
         <nav class="nav-container">
             <a href="#" class="nav-logo" id="logo-link">
-                <span class="logo-text">R<span class="logo-dot">.</span>Nadimaisy</span>
+                <div class="logo-avatar-wrap">
+                    <img src="{{ asset('img/profile.jpg') }}" alt="Rigel Nadimaisy" class="logo-avatar-img" id="logo-avatar">
+                </div>
+                <span class="logo-text">Rigel<span class="logo-dot">.</span>Nadimaisy</span>
             </a>
             
             <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle Menu">
@@ -44,7 +47,6 @@
                 <li class="nav-item"><a href="#hero" class="nav-link active" id="nav-link-hero">Beranda</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link" id="nav-link-about">Tentang</a></li>
                 <li class="nav-item"><a href="#skills" class="nav-link" id="nav-link-skills">Keahlian</a></li>
-                <li class="nav-item"><a href="#experience" class="nav-link" id="nav-link-experience">Pengalaman</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link" id="nav-link-projects">Proyek</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link" id="nav-link-contact">Kontak</a></li>
             </ul>
@@ -60,12 +62,12 @@
     <footer class="site-footer" id="main-footer">
         <div class="footer-container">
             <div class="footer-info">
-                <h3>Rigel Nadimaisy</h3>
-                <p>Membangun pengalaman web digital yang premium, estetis, dan fungsional.</p>
+                <h3>Rigel Nadimaisy Ammarusshidqi</h3>
+                <p>Membangun pengalaman membbangun website digital yang fungsional.</p>
                 <div class="footer-socials">
                     <a href="https://github.com" target="_blank" aria-label="GitHub" id="footer-github-link"><i class="fab fa-github"></i></a>
                     <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" id="footer-linkedin-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="mailto:rigelnadimaisy@email.com" aria-label="Email" id="footer-email-link"><i class="far fa-envelope"></i></a>
+                    <a href="mailto:career.rigel@email.com" aria-label="Email" id="footer-email-link"><i class="far fa-envelope"></i></a>
                 </div>
             </div>
             <div class="footer-links">
