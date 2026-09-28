@@ -26,9 +26,16 @@ RUN composer install \
 
 COPY . .
 
-# Generate .env dari .env.example, buat direktori yang dibutuhkan,
-# buat database SQLite, lalu optimize autoloader
+# Buat .env yang proper dengan semua nilai yang dibutuhkan
 RUN cp .env.example .env \
+    && sed -i 's|^APP_KEY=.*|APP_KEY=base64:nlIg5aPSIFYC+Fv8dDh1qsXNtyZK+goLYYf/16TChrQ=|' .env \
+    && sed -i 's|^APP_ENV=.*|APP_ENV=production|' .env \
+    && sed -i 's|^APP_URL=.*|APP_URL=https://my-porto-jade-ten.vercel.app|' .env \
+    && sed -i 's|^APP_DEBUG=.*|APP_DEBUG=true|' .env \
+    && sed -i 's|^SESSION_DRIVER=.*|SESSION_DRIVER=array|' .env \
+    && sed -i 's|^CACHE_STORE=.*|CACHE_STORE=array|' .env \
+    && sed -i 's|^QUEUE_CONNECTION=.*|QUEUE_CONNECTION=sync|' .env \
+    && sed -i 's|^LOG_CHANNEL=.*|LOG_CHANNEL=stderr|' .env \
     && mkdir -p \
         storage/framework/cache \
         storage/framework/sessions \
@@ -78,20 +85,8 @@ COPY --chown=www-data:www-data \
     Caddyfile /etc/frankenphp/Caddyfile
 
 RUN setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/frankenphp \
-    && chown -R www-data:www-data /config/caddy /data/caddy
-
-# Set semua env yang dibutuhkan Laravel agar bisa boot
-ENV APP_NAME=MyPorto \
-    APP_ENV=production \
-    APP_KEY=base64:nlIg5aPSIFYC+Fv8dDh1qsXNtyZK+goLYYf/16TChrQ= \
-    APP_DEBUG=true \
-    APP_URL=https://my-porto-jade-ten.vercel.app \
-    LOG_CHANNEL=stderr \
-    CACHE_STORE=array \
-    SESSION_DRIVER=array \
-    QUEUE_CONNECTION=sync \
-    DB_CONNECTION=sqlite \
-    DB_DATABASE=/app/database/database.sqlite
+    && chown -R www-data:www-data /config/caddy /data/caddy \
+    && chmod -R 775 /app/storage /app/bootstrap/cache
 
 USER www-data
 
