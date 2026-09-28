@@ -11,9 +11,9 @@
                 <i class="fas fa-code"></i> Web Developer
             </div>
             <h1 class="hero-title" id="main-title">{{ $profile['name'] }}</h1>
-            <p class="hero-description">
-                {{ $profile['bio'] }}
-            </p>
+                @foreach($profile['bio'] as $paragraph)
+                    <p class="hero-description">{{ $paragraph }}</p>
+                @endforeach
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary" id="hero-btn-projects">
                     Lihat Proyek <i class="fas fa-arrow-right"></i>

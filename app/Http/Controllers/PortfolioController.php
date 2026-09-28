@@ -17,7 +17,10 @@ class PortfolioController extends Controller
             'name' => 'Rigel Nadimaisy',
             'title' => 'Web Developer',
             'taglines' => ['Web Developer'],
-            'bio' => 'Saya adalah seorang mahasiswa Universitas Negeri Yogyakarta program studi S1-Teknologi Informasi. Saya sangat tertarik terkait dengan dunia rekayasa perangkat lunak terutama pengembangan website. Saya memiliki pengalaman megembangan sebuah website seperti website portofolio, team base project website sistem penulisan hibah buku, dan website profil padukuhan. beberapa pengalaman ini lah yang sangat membuat saya tertarik untuk belajar lebih dalam terkait dengan dunia pengembangan website.',
+            'bio' => [
+                'Saya merupakan mahasiswa Program Studi S1 Teknologi Informasi, Universitas Negeri Yogyakarta, yang memiliki ketertarikan besar pada bidang Rekayasa Perangkat Lunak, khususnya dalam pengembangan website. Ketertarikan tersebut didukung oleh pengalaman saya dalam mengembangkan berbagai proyek website, baik secara individu maupun dalam tim, seperti website portofolio, website Sistem Penulisan Hibah Buku yang dikembangkan secara tim, serta website Profil Padukuhan.',
+                'Berbagai pengalaman tersebut memberikan kesempatan bagi saya untuk memahami dan menerapkan proses pengembangan website secara lebih nyata, sekaligus meningkatkan kemampuan dan ketertarikan saya untuk mempelajari lebih dalam mengenai dunia pengembangan website. Melalui pengalaman tersebut, saya terus berupaya mengembangkan pengetahuan dan keterampilan di bidang Rekayasa Perangkat Lunak, khususnya dalam perancangan dan pengembangan aplikasi berbasis website.',
+            ],
             'email' => 'career.rigel@gmail.com', // Gantilah dengan email Anda
             'phone' => '+62 853-2944-9504',     // Gantilah dengan nomor Anda
             'location' => 'Indonesia',

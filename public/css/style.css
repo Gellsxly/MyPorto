@@ -364,6 +364,7 @@ img {
     max-width: 520px;
     margin-bottom: 36px;
     line-height: 1.75;
+    text-align: justify;
 }
 
 .hero-cta {
