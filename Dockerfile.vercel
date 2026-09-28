@@ -26,7 +26,7 @@ RUN composer install \
 
 COPY . .
 
-# Buat .env yang proper dengan semua nilai yang dibutuhkan
+# Buat .env dengan nilai yang benar untuk production (tanpa database server)
 RUN cp .env.example .env \
     && sed -i 's|^APP_KEY=.*|APP_KEY=base64:nlIg5aPSIFYC+Fv8dDh1qsXNtyZK+goLYYf/16TChrQ=|' .env \
     && sed -i 's|^APP_ENV=.*|APP_ENV=production|' .env \
@@ -35,17 +35,26 @@ RUN cp .env.example .env \
     && sed -i 's|^SESSION_DRIVER=.*|SESSION_DRIVER=array|' .env \
     && sed -i 's|^CACHE_STORE=.*|CACHE_STORE=array|' .env \
     && sed -i 's|^QUEUE_CONNECTION=.*|QUEUE_CONNECTION=sync|' .env \
-    && sed -i 's|^LOG_CHANNEL=.*|LOG_CHANNEL=stderr|' .env \
-    && mkdir -p \
+    && sed -i 's|^LOG_CHANNEL=.*|LOG_CHANNEL=stderr|' .env
+
+# Buat direktori yang dibutuhkan & database sqlite kosong
+RUN mkdir -p \
         storage/framework/cache \
         storage/framework/sessions \
         storage/framework/views \
         bootstrap/cache \
         database \
-    && touch database/database.sqlite \
-    && composer dump-autoload \
-        --no-dev \
-        --classmap-authoritative
+    && touch database/database.sqlite
+
+# Optimize autoloader
+RUN composer dump-autoload \
+    --no-dev \
+    --classmap-authoritative
+
+# Cache config, routes, dan views saat build (lebih cepat di production)
+RUN php artisan config:cache \
+    && php artisan route:cache \
+    && php artisan view:cache
 
 
 # =========================
