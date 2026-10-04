@@ -109,7 +109,11 @@
             @foreach($skills as $skill)
             <div class="skill-icon-card card">
                 <div class="skill-icon-wrap" style="background: {{ $skill['color'] }}18; color: {{ $skill['color'] }};">
-                    <i class="{{ $skill['icon'] }}"></i>
+                    @if(str_starts_with($skill['icon'], 'img:'))
+                        <img src="{{ substr($skill['icon'], 4) }}" alt="{{ $skill['name'] }}" style="width: 1em; height: 1em; object-fit: contain;">
+                    @else
+                        <i class="{{ $skill['icon'] }}"></i>
+                    @endif
                 </div>
                 <span class="skill-icon-name">{{ $skill['name'] }}</span>
             </div>

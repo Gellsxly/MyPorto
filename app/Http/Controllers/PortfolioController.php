@@ -35,6 +35,7 @@ class PortfolioController extends Controller
             ['name' => 'GitHub',            'icon' => 'fa-brands fa-github',         'color' => '#1b1f2e'],
             ['name' => 'Figma',             'icon' => 'fa-brands fa-figma',          'color' => '#A259FF'],
             ['name' => 'VS Code',           'icon' => 'fa-solid fa-code',            'color' => '#007ACC'],
+            ['name' => 'MySQL',             'icon' => 'img:https://cdn.simpleicons.org/mysql/4479A1', 'color' => '#4479A1'],
         ];
 
         $experiences = [
